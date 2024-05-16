@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sparkle</title>
+    <style>
+ body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: black;
+}
+
+.container {
+  position: relative;
+}
+.sparkle-btn {
+    cursor: pointer;
+    padding: 30px 45px;
+    font-size: 50px;
+    outline: none;
+    border: 5px solid #5bffd3;
+    border-radius: 20px;
+    transition: all 0.3s ease-in-out;
+    background-color: #5bffd3;
+    box-shadow: 0 0 8px 4px  #5bffd3;
+    position: relative;
+    display: block;
+    z-index: 2;
+   
+}
+.sparkle-btn:hover {
+    background-clip: text;
+    color: #5bffd3;
+    box-shadow: 0 0 10px #5bffd3;
+}
+
+.stars {
+  position: relative;
+  /* position: absolute; */
+  top: 50%;
+  /* top: calc(100% + 20px); */
+  left: 50%;
+  transform: translate(-50%, -50%);
+  /* transform: translateX(-50%); */
+  width: 200px; 
+  height: 200px;
+  opacity: 0;
+  z-index: 1;
+  
+  transition: opacity 0.4s ease;
+  filter: drop-shadow(5px 1px 3px #fcf93f);
+ 
+} 
+
+
+ .sparkle-btn:hover + .stars {
+    opacity: 1;  
+    animation: flowStars 1s ease forwards;
+    z-index: 2;
+}
+@keyframes flowStars {
+    0% {
+      opacity: 0;
+      transform: translateX(-50%) translateY(-50%);
+    }
+    100% {
+      opacity: 1;
+      transform: translateX(-50%) translateY(-50%);
+    }
+} 
+.star {
+  position: absolute; 
+  background-color: #fffdef;
+    clip-path: polygon(
+        52% 0, 
+        59% 42%, 
+        100% 46%, 
+        59% 52%, 
+        53% 100%, 
+        50% 70%, 
+        53% 100%, 
+        48% 53%, 
+        0 46%, 
+        48% 42%
+        );
+        
+} 
+
+
+.star:nth-child(1) {
+  top: -60%;
+  left: -100%;
+  width: 60px; 
+  height: 60px;   
+}
+
+.star:nth-child(2) {
+  top: -20%;
+  left: 0%;
+  width: 30px; 
+  height: 30px;
+}
+
+.star:nth-child(3) {
+  top: 2%;
+  right: -65%;
+  width: 30px; 
+  height: 30px;
+}
+
+.star:nth-child(4) {
+  top: 40%;
+  left: 0%;
+  width: 10px; 
+  height: 10px;
+}
+
+.star:nth-child(5) {
+  top: 16%;
+  right: -15%;
+  width: 15px; 
+  height: 15px;
+}
+
+.star:nth-child(6) {
+  top: 5%;
+  right: 29%;
+  width: 13px; 
+  height: 13px;
+}
+.sparkle-btn:hover + .stars .star:nth-child(1) {
+    animation: moveStar1 1s ease forwards;
+}
+
+.sparkle-btn:hover + .stars .star:nth-child(2) {
+    animation: moveStar2 1s ease forwards;
+}
+
+.sparkle-btn:hover + .stars .star:nth-child(3) {
+    animation: moveStar3 1s ease forwards;
+}
+
+.sparkle-btn:hover + .stars .star:nth-child(4) {
+    animation: moveStar4 1s ease forwards;
+}
+
+.sparkle-btn:hover + .stars .star:nth-child(5) {
+    animation: moveStar5 1s ease forwards;
+}
+
+.sparkle-btn:hover + .stars .star:nth-child(6) {
+    animation: moveStar6 1s ease forwards;
+}
+
+@keyframes moveStar1 {
+    0% {
+        top: 50%;
+        left: 50%;
+        opacity: 0;
+        transform: translate(-50%, -50%) scale(0);
+    }
+    100% {
+        top: -60%;
+        left: -100%;
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1);
+    }
+}
+
+@keyframes moveStar2 {
+    0% {
+        top: 50%; 
+        left: 50%;
+        opacity: 0;
+        transform: translate(-50%, -50%) scale(0);
+    }
+    100% {
+        top: -13%;
+        left: 0%;
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1);
+    }
+}
+
+@keyframes moveStar3 {
+    0% {
+        top: 50%;
+        right: 50%;
+        opacity: 0;
+        transform: translate(50%, -150%) scale(0);
+    }
+    100% {
+        top: 2%;
+        right: -65%;
+        opacity: 1;
+        transform: translate(50%, -50%) scale(1);
+    }
+}
+
+@keyframes moveStar4 {
+    0% {
+         top: 50%;
+        left: 50%; 
+        opacity: 0;
+        transform: translate(-50%, -150%) scale(0);
+    }
+    100% {
+        top: 40%;
+        left: 0%;
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1);
+    }
+}
+
+@keyframes moveStar5 {
+    0% {
+         top: 50%;
+        right: 50%; 
+        opacity: 0;
+        transform: translate(50%, -150%) scale(0);
+    }
+    100% {
+        top: 16%;
+        right: -15%;
+        opacity: 1;
+        transform: translate(50%, -50%) scale(1);
+    }
+}
+
+@keyframes moveStar6 {
+    0% {
+        top: 50%;
+        right: 50%; 
+        opacity: 0;
+        transform: translate(50%, -150%) scale(0);
+    }
+    100% {
+        top: 5%;
+        right: 29%;
+        opacity: 1;
+        transform: translate(-50%, 90%) scale(1);
+    }
+}
+
+ </style>
+</head>
+<body>
+     <div class="container">
+        <button  class="sparkle-btn">Hover Me</button>
+        <div class="stars">
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+          </div>
+      </div> 
+
+    
+      
+
+</body>
+</html>
